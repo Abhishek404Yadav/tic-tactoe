@@ -19,12 +19,9 @@ function App() {
   };
 // Win logic
   const checkIsWinner = () => {
-    //Draw
-    if(!itemArray.includes("empty")){
-      setWinMsg("draw");
-    }
+  
     // row 1
-    else if (
+     if (
       itemArray[0] === itemArray[1] &&
       itemArray[0] === itemArray[2] &&
       itemArray[0] !== "empty"
@@ -79,6 +76,10 @@ function App() {
       itemArray[2] !== "empty"
     )
       setWinMsg(`${itemArray[2]} wins`);
+    //Draw
+    else if(!itemArray.includes("empty")){
+      setWinMsg("draw");
+    }
   };
 // Updating Card
   function changeItem(itemNumber) {
